@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3-Tier Application</title>
+</head>
+<body>
+
+    <h1>Welcome to 3-Tier Application</h1>
+
+    <p>Frontend Tier: HTML</p>
+    <p>Backend Tier: Node.js</p>
+    <p>Database Tier: Simulated Database</p>
+
+    <button onclick="checkBackend()">Check Backend</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function checkBackend() {
+            try {
+                const response = await fetch("http://YOUR_EC2_PUBLIC_IP:3000/api/status");
+                const data = await response.json();
+
+                document.getElementById("result").innerText = data.message;
+            } catch (error) {
+                document.getElementById("result").innerText =
+                    "Backend connection failed";
+            }
+        }
+    </script>
+
+</body>
+</html>
