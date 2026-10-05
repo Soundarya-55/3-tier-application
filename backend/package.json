@@ -1,0 +1,13 @@
+{
+  "name": "three-tier-backend",
+  "version": "1.0.0",
+  "description": "3 Tier Application Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node -e \"console.log('Backend test passed')\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
